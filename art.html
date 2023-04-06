@@ -13,7 +13,7 @@
 			foreach($files as $file) {
 				if (pathinfo($file, PATHINFO_EXTENSION) == "mp4") {
 					echo '<div class="item video">';
-					echo '<video autoplay muted loop>';
+					echo '<video controls>';
 					echo '<source src="' . $file . '" type="video/mp4">';
 					echo '</video>';
 					echo '</div>';
