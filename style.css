@@ -135,3 +135,23 @@
     margin-top: 10px;
   }
     
+  .cafe {
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-image: url(img/cafe-background.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+   
+  }  

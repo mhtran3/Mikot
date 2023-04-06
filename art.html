@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Artwork</title>
+    <title>My Art Cafe</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -20,28 +20,30 @@
     </header>
 
     <main>
-      <section>
-        <h2>My Artwork</h2>
-        <ul class="gallery">
-          <li>
-            <img src="img/artwork1.jpg" alt="Artwork 1">
-            <p>Artwork 1 description</p>
-          </li>
-          <li>
-            <img src="img/artwork2.jpg" alt="Artwork 2">
-            <p>Artwork 2 description</p>
-          </li>
-          <li>
-            <img src="img/artwork3.jpg" alt="Artwork 3">
-            <p>Artwork 3 description</p>
-          </li>
-          <!-- Add more <li> elements as needed -->
-        </ul>
+      <section class="cafe">
+        <div class="background"></div>
+        <div class="art-container">
+          <img src="img/artwork1.jpg" alt="Artwork 1">
+          <img src="img/artwork2.jpg" alt="Artwork 2">
+          <img src="img/artwork3.jpg" alt="Artwork 3">
+          <!-- Add more <img> elements as needed -->
+        </div>
       </section>
     </main>
 
     <footer>
       <p>&copy; 2023 My Portfolio</p>
     </footer>
+
+    <script>
+      window.addEventListener('scroll', function() {
+        const cafe = document.querySelector('.cafe');
+        const background = cafe.querySelector('.background');
+        const artContainer = cafe.querySelector('.art-container');
+        const scrollPercentage = (window.scrollY / window.innerHeight) * 100;
+        background.style.transform = `translateX(${scrollPercentage * -1}%)`;
+        artContainer.style.transform = `translateX(${scrollPercentage}%)`;
+      });
+    </script>
   </body>
 </html>
