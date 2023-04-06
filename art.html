@@ -1,53 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>My Art</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>My Art</title>
+    <style>
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 1920px;
+        }
+
+        .item {
+            margin: 10px;
+            width: 50%;
+            max-width: 800px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-	<div id="gallery"></div>
-	<script>
-		const gallery = document.querySelector('#gallery');
-
-		const mediaFiles = [
-			{ type: 'image', src: 'MyArt/AST.png' },
-			{ type: 'image', src: 'MyArt/CHM.png' },
-			{ type: 'image', src: 'MyArt/COS_Shirt.jpg' },
-			{ type: 'image', src: 'MyArt/ELE_Shirt.jpg' },
-			{ type: 'image', src: 'MyArt/Mae.jpg' },
-            { type: 'video', src: 'MyArt/michael-composite.mp4' },
-			
-		];
-
-		mediaFiles.forEach(file => {
-			const item = document.createElement('div');
-			item.classList.add('item');
-
-			if (file.type === 'image') {
-				const img = document.createElement('img');
-				img.src = file.src;
-				item.appendChild(img);
-			} else if (file.type === 'video') {
-				const video = document.createElement('video');
-				video.autoplay = true;
-				video.muted = true;
-				video.loop = true;
-
-				const source = document.createElement('source');
-				source.src = file.src;
-				source.type = 'video/mp4';
-
-				video.appendChild(source);
-				item.appendChild(video);
-			}
-
-			gallery.appendChild(item);
-		});
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
-	<script src="script.js"></script>
+    <div id="gallery">
+        <div class="item">
+            <img src="MyArt/AST.png">
+        </div>
+        <div class="item">
+            <img src="MyArt/CHM.png">
+        </div>
+        <div class="item">
+            <img src="MyArt/COS_Shirt.jpg">
+        </div>
+        <div class="item">
+            <img src="MyArt/ELE_Shirt.jpg">
+        </div>
+        <div class="item">
+            <img src="MyArt/Mae.jpg">
+        </div>
+        <div class="item video">
+            <video autoplay muted loop>
+                <source src="MyArt/michael-composite.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
 </body>
 </html>
