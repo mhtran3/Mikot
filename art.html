@@ -1,49 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Art Cafe</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <header>
-      <h1>My Portfolio</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="art.html">Art</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      <section class="cafe">
-        <div class="background"></div>
-        <div class="art-container">
-          <img src="img/artwork1.jpg" alt="Artwork 1">
-          <img src="img/artwork2.jpg" alt="Artwork 2">
-          <img src="img/artwork3.jpg" alt="Artwork 3">
-          <!-- Add more <img> elements as needed -->
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>&copy; 2023 My Portfolio</p>
-    </footer>
-
-    <script>
-      window.addEventListener('scroll', function() {
-        const cafe = document.querySelector('.cafe');
-        const background = cafe.querySelector('.background');
-        const artContainer = cafe.querySelector('.art-container');
-        const scrollPercentage = (window.scrollY / window.innerHeight) * 100;
-        background.style.transform = `translateX(${scrollPercentage * -1}%)`;
-        artContainer.style.transform = `translateX(${scrollPercentage}%)`;
-      });
-    </script>
-  </body>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>My Art</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="gallery">
+		<?php
+			$dir = 'MyArt/';
+			$files = glob($dir . '*.{jpg,jpeg,png,gif,mp4}', GLOB_BRACE);
+			foreach($files as $file) {
+				if (pathinfo($file, PATHINFO_EXTENSION) == "mp4") {
+					echo '<div class="item video">';
+					echo '<video autoplay muted loop>';
+					echo '<source src="' . $file . '" type="video/mp4">';
+					echo '</video>';
+					echo '</div>';
+				} else {
+					echo '<div class="item">';
+					echo '<img src="' . $file . '">';
+					echo '</div>';
+				}
+			}
+		?>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+	<script src="script.js"></script>
+</body>
 </html>
