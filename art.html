@@ -6,25 +6,45 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div id="gallery">
-		<?php
-			$dir = 'MyArt/';
-			$files = glob($dir . '*.{jpg,jpeg,png,gif,mp4}', GLOB_BRACE);
-			foreach($files as $file) {
-				if (pathinfo($file, PATHINFO_EXTENSION) == "mp4") {
-					echo '<div class="item video">';
-					echo '<video controls>';
-					echo '<source src="' . $file . '" type="video/mp4">';
-					echo '</video>';
-					echo '</div>';
-				} else {
-					echo '<div class="item">';
-					echo '<img src="' . $file . '">';
-					echo '</div>';
-				}
+	<div id="gallery"></div>
+	<script>
+		const gallery = document.querySelector('#gallery');
+
+		const mediaFiles = [
+			{ type: 'image', src: 'MyArt/AST.png' },
+			{ type: 'image', src: 'MyArt/CHM.png' },
+			{ type: 'image', src: 'MyArt/COS_Shirt.jpg' },
+			{ type: 'image', src: 'MyArt/ELE_Shirt.jpg' },
+			{ type: 'image', src: 'MyArt/Mae.jpg' },
+            { type: 'video', src: 'MyArt/michael-composite.mp4' },
+			
+		];
+
+		mediaFiles.forEach(file => {
+			const item = document.createElement('div');
+			item.classList.add('item');
+
+			if (file.type === 'image') {
+				const img = document.createElement('img');
+				img.src = file.src;
+				item.appendChild(img);
+			} else if (file.type === 'video') {
+				const video = document.createElement('video');
+				video.autoplay = true;
+				video.muted = true;
+				video.loop = true;
+
+				const source = document.createElement('source');
+				source.src = file.src;
+				source.type = 'video/mp4';
+
+				video.appendChild(source);
+				item.appendChild(video);
 			}
-		?>
-	</div>
+
+			gallery.appendChild(item);
+		});
+	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
