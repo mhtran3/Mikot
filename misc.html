@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>monique legaspi</title>
+        <link rel="stylesheet" href="css/styles.css"/>
+        <link rel="stylesheet" href="css/misc.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+    </head>
+    <body>
+        <div id="header"></div>
+        <div class="flexCol container">
+            <span class="title drag" title="drag me!">miscellaneous :~)</span>
+            <span class="drag" style="margin-top: 20px" title="drag me!">[inspo + hobbies!]</span>
+            <div class="squareDance" style="margin-top: 60px">
+                <div class="square circle drag" id="drag1" style="background: var(--red)" title="drag me!"><a class="squareButton" href="https://neal.fun/deep-sea/" target="_blank">
+                    <div class="imgOverlay circle" style="background: var(--red)"><p><b>𓆞 𓆝 𓆟</b></p></div>
+                </a></div>
+                <div class="square circle drag" id="drag2" style="background: var(--yellow)" title="drag me!"><a class="squareButton" href="https://vimeo.com/208812809" target="_blank">
+                    <div class="imgOverlay circle" style="background: var(--yellow)"><p><b>✦ ✦ ✦</b></p></div>
+                </a></div>
+                <div class="square circle drag" id="drag3" style="background: var(--green)" title="why r u dragging me :("><a class="squareButton" href="https://open.spotify.com/playlist/5RdhX76W9bvaFWKTycJh94?si=73fd91582d4c4455" target="_blank">
+                    <div class="imgOverlay circle" style="background: var(--green)"><p><b>𓆏 𓆏 𓆏</b></p></div>
+                </a></div>
+            </div>
+        </div>
+        <div id="footer"></div>
+    </body>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script> 
+        $(function(){
+            $("#header").load("common/header.html"); 
+            $("#footer").load("common/footer.html"); 
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $(".drag").draggable();
+            // $("#drag1").draggable();
+            // $("#drag2").draggable();
+            // $("#drag3").draggable();
+        });
+    </script>
+</html>

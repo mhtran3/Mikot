@@ -1,0 +1,261 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--dblue);
+}
+b {
+    font-weight: 700;
+}
+a {
+    color: var(--blue);
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/***** VARIABLES *****/
+:root {  
+    /* regular colors */
+    --red: #FF4B4B;
+    --yellow: #FFAC4B;
+    --green: #9BE53C;
+    --blue: #4B68FF;
+
+    /* dark (for text) */
+    --dred: #6B0000;
+    --dyellow: #6B3900;
+    --dgreen: #3D6B00;
+    --dblue: #00116B;
+
+    /* fade (for comments) */
+    --fred: #D86B6B;
+    --fyellow: #D8A56B;
+    --fgreen: #A9D86B;
+    --fblue: #6B7CD8;
+
+    /* greyscale */
+    --grey: #A5A5A5;
+    --dgrey: black;
+    --fgrey: #A1A1A1;
+
+    /* font sizes */
+    --subtitle: 1.5rem;
+    --title: 2rem;
+}
+
+/***** FLEX SETTINGS *****/
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+.flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+/***** HEADER *****/
+.navbar {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    justify-content: space-between;
+}
+.menu {
+    width: auto;
+    height: 40px;
+    font-size: var(--subtitle);
+}
+.menuItem {
+    margin-right: 30px;
+    text-decoration: none;
+    color: inherit;
+}
+.menuItem:hover {
+    cursor: pointer;
+    color: white;
+    background-color: var(--blue);
+}
+.icon {
+    display: none;
+}
+#hamburgerMenu {
+    display: none;
+    position: absolute;
+    left: 10%;
+    margin-top: 10px;
+    outline: 1px solid blue;
+    background: white;
+    padding: 20px;
+    transform: opacity .5s;
+}
+.name {
+    height: auto;
+    font-size: var(--subtitle);
+    margin-right: 15px;
+    text-decoration: none;
+    color: inherit;
+}
+.name:hover {
+    cursor: pointer;
+}
+.logoContainer {
+    max-width: 30px;
+    max-height: 30px;
+}
+.logoContainer:hover {
+    cursor: pointer;
+}
+
+/***** COMMON ELEMENTS *****/
+.title {
+    margin-top: 100px;
+    font-size: var(--title);
+}
+.container {
+    width: 100vw;
+    height: auto;
+    text-align: center; 
+    align-items: center;
+}
+.squareDance {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    width: calc(90vw + 60px);
+    max-width: 1560px;
+}
+.square {
+    width: 30vw;
+    height: 30vw;
+    max-width: 500px;
+    max-height: 500px;
+    margin: 10px;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+}
+.squareButton {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0);
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+.imgOverlay {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+}
+.imgOverlay p {
+    position: absolute;
+    width: 100%;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--subtitle);
+    color: white;
+}
+.imgOverlay:hover {
+    background-color: var(--blue);
+    opacity: 1;
+    transition: opacity .5s;
+    z-index: 0;
+}
+/* .box {
+    width: 80vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    align-items: center;
+    text-align: center;
+    padding: 10px 30px;
+} */
+.popup {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dblue);
+}
+.popupInner {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px;
+    color: white;
+    text-align: center; 
+    align-items: center;
+    overflow: none;
+}
+.carousel {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center; 
+    align-items: center;
+}
+.bigImgContainer {
+    max-width: 80vw;
+    max-height: 80vh;
+}
+
+/***** MOBILE RESPONSIVE *****/
+@media screen and (max-width: 999px) {
+    /* bigger font */
+    body {
+        font-size: 2rem;
+    }
+    :root {
+        --subtitle: 2.5rem;
+        --title: 3rem;
+    }
+
+    /* hamburger nav */
+    .navbar {
+        height: auto;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 10vw;
+    }
+    .menu {
+        display: none;
+    }
+    .icon {
+        display: block;
+        margin-top: 6px;
+    }
+    .name {
+        margin-right: 25px;
+    }
+    .logoContainer {
+        width: 50px;
+        height: 50px;
+        max-width: 50px;
+        max-height: 50px;
+    }
+    img.fish {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    /* square widgets go column */
+    .squareDance {
+        flex-direction: column;
+        width: calc(80vw + 50px);
+    }
+    .square {
+        width: 80vw;
+        height: 80vw;
+        max-width: 80vw;
+        max-height: 80vw;
+        margin: 25px;
+    }
+}
