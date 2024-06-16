@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #ecd4bf;
     color: white;
     text-align: center;
     padding: 1em 0;
@@ -44,7 +44,7 @@ nav ul li a:hover {
 .intro-text {
     flex: 1;
     padding-left: 20%;
-    padding-right: 20%;
+    padding-right: 0%;
 }
 
 .intro-image {
@@ -63,7 +63,7 @@ section {
 }
 
 h2 {
-    color: #4CAF50;
+    color: #000000;
 }
 
 footer {
