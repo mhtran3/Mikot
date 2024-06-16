@@ -37,7 +37,8 @@ nav ul li a:hover {
 .intro-container {
     display: flex;
     align-items: center;
-    padding: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .intro-text {
