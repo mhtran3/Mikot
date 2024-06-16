@@ -41,12 +41,12 @@ nav ul li a:hover {
 }
 
 .intro-text {
-    flex: 1;
+    flex: 0 0 60%; /* Take up 60% of the container's width */
     padding: 20px;
 }
 
 .intro-image {
-    flex: 1;
+    flex: 0 0 40%; /* Take up 40% of the container's width */
     text-align: center;
 }
 
